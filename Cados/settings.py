@@ -26,12 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-1pqok1i&9%k$41)8nx8ij1a&mi)zdr@ibv2%m(l6m)d@w6=f&t"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", True)
 
 ALLOWED_HOSTS = []
 WEBHOST = os.environ.get("WEBHOST", "http://localhost:8000")
 API_AUTH_KEY = os.environ.get("API_AUTH_KEY", "secret")
 
+ALLOWED_HOSTS.append(WEBHOST)
 
 # Application definition
 
