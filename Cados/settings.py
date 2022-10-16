@@ -10,14 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
-import environ
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-env = environ.Env()
-environ.Env.read_env()
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -26,14 +25,15 @@ environ.Env.read_env()
 SECRET_KEY = "django-insecure-1pqok1i&9%k$41)8nx8ij1a&mi)zdr@ibv2%m(l6m)d@w6=f&t"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG', default=True)
+DEBUG = os.environ.get('DEBUG',True)
 
-ALLOWED_HOSTS = []
-WEBHOST = env("WEBHOST", "http://localhost:8000")
-API_AUTH_KEY = env("API_AUTH_KEY", "secret")
+ALLOWED_HOSTS = ["localhost"]
+WEBHOST = os.environ.get("WEBHOST", default="http://localhost:8000")
+API_AUTH_KEY = os.environ.get("API_AUTH_KEY", default="secret")
 
-if not DEBUG:
-    ALLOWED_HOSTS.append(WEBHOST.removeprefix("http://").removeprefix("https://"))
+ALLOWED_HOSTS.append(WEBHOST.removeprefix("http://").removeprefix("https://"))
+
+print(WEBHOST)
 # Application definition
 
 INSTALLED_APPS = [
