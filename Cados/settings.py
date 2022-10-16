@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     "django_cleanup.apps.CleanupConfig",
     "apps.api.apps.ApiConfig",
     "corsheaders",
-    "ninja",
 ]
 
 MIDDLEWARE = [
