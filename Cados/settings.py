@@ -33,7 +33,6 @@ API_AUTH_KEY = os.environ.get("API_AUTH_KEY", default="secret")
 
 ALLOWED_HOSTS.append(WEBHOST.removeprefix("http://").removeprefix("https://"))
 
-print(WEBHOST)
 # Application definition
 
 INSTALLED_APPS = [
