@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django_cleanup.apps.CleanupConfig",
     "apps.api.apps.ApiConfig",
     "corsheaders",
+    "ninja",
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_URL = "staticfiles"
 
 MEDIA_URL = f"{WEBHOST}/media/"
 MEDIA_ROOT = BASE_DIR / "media"
