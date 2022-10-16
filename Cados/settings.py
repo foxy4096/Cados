@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 WEBHOST = os.environ.get("WEBHOST", "http://localhost:8000")
 API_AUTH_KEY = os.environ.get("API_AUTH_KEY", "secret")
 
-ALLOWED_HOSTS.append(WEBHOST)
+ALLOWED_HOSTS.append(WEBHOST.removeprefix("https://").removeprefix("http://"))
 
 # Application definition
 
