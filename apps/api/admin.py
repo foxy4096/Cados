@@ -21,6 +21,7 @@ class AdvocateAdmin(admin.ModelAdmin):
     search_fields = [
         "name",
         "short_bio",
+        "long_bio",
         "advocate_years_exp",
         "company__name",
     ]
