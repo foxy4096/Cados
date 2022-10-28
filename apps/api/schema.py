@@ -53,7 +53,11 @@ class LinkSchema(ModelSchema):
 
     class Config:
         model = Link
-        model_fields = "__all__"
+        model_fields = [
+            "youtube",
+            "github",
+            "twitter",
+        ]
 
 
 class AdvocateSchema(ModelSchema):
