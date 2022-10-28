@@ -32,6 +32,7 @@ class AdvocateAdmin(admin.ModelAdmin):
     fields = [
         "name",
         "short_bio",
+        "long_bio",
         "advocate_years_exp",
         "company",
         "avatar_display",
